@@ -10,13 +10,14 @@
     空间中也是如此，任意向量a在空间的一组基(e$_1$,e$_2$,e$_3$)有这样一个坐标： $$ a = \begin{bmatrix}e_1&e_2&e_3\end{bmatrix} \begin{bmatrix}a_1\\a_2\\a_3\end{bmatrix} = a_1e_1 + a_2e_2 + a_3e_3$$
 
     + 坐标系：右手系为伸开右手，大拇指是X轴正方向，食指是Y轴正方向，其他三个手指是Z轴正方向，左手系同理。
-    ![](/插图/chapter3/坐标系.png)
+![坐标系](https://img-blog.csdnimg.cn/f027ac701c7f4232964ece13d3150f3e.png#pic_center)
+
 
     + 向量内积：内积可理解为第一个向量投影到第二个向量上（无所谓向量的顺序），可以表示为$$a\cdot b = a^Tb = \sum_{i=1}^3 a_ib_i = |a||b|cos<a,b>\\a,b \in R^3$$
     
-    + 向量外积，$a$和$b$的外积结果是一个法向量，垂直于$a$和$b$构成的平面。
+    + 向量外积：$a$和$b$的外积结果是一个法向量，垂直于$a$和$b$构成的平面。
     还有一个用途是通过两个向量的外积，生成第三个垂直于$a$，$b$的法向量，从而构建X、Y、Z坐标系。
-    外积可以表示为$a\times b = \begin{bmatrix}e_1&e_2&e_3 \\ a_1&a_2&a_3 \\ b_1&b_2&b_3 \end{bmatrix} = \begin{bmatrix} a_2b_3 - a_3b_2 \\ a_3b_1-a_1b_3 \\ a_1b_2 - a_2b_1 \end{bmatrix} = \begin{bmatrix}0&-a_3&a_2 \\ a_3&0&-a_1 \\ -a_2&a_1&0\end{bmatrix}b\stackrel{def}{=} a$^$b $
+    外积可以表示为$a\times b = \begin{bmatrix}e_1&e_2&e_3 \\ a_1&a_2&a_3 \\ b_1&b_2&b_3 \end{bmatrix} = \begin{bmatrix} a_2b_3 - a_3b_2 \\ a_3b_1-a_1b_3 \\ a_1b_2 - a_2b_1 \end{bmatrix} = \begin{bmatrix}0&-a_3&a_2 \\ a_3&0&-a_1 \\ -a_2&a_1&0\end{bmatrix}b\stackrel{def}{=} a$^$b$
     式中^符号，可以理解为反对称符号，将向量a写成一个矩阵，这样两个向量的乘法就变成了矩阵和向量的乘法，把它变成线性运算。
 
 ### 2.坐标系间的欧式变换
@@ -58,17 +59,15 @@ $R =cos{\theta}I+(1-cos{\theta})nn^T + sin{\theta}n\hat{}$
 $q = [s,v] \space (v = \begin{bmatrix} x\\y\\z \end {bmatrix} s,x,y,z \in R)$
 + 四元数的简单理解：复数的运算可以形象的表示在二维中向量的运动，两个复数相乘实际上是旋转与缩放的组合。到三维空间中，也有相应的四元数可以表示向量的旋转。
 + 四元数表示旋转：
-定义点p(x,y,z),点p用虚四元数表示为$ p = \begin{bmatrix}0,x,y,z \end {bmatrix}^T = \begin{bmatrix}0,v \end {bmatrix}^T$，这样可以看作四元数三个虚部与空间中的三个轴对应，旋转后的点$p' = qpq^{-1}$，最后把$p'$的虚部取出，即为旋转之后点的坐标。
+定义点p(x,y,z),点p用虚四元数表示为$$ p = \begin{bmatrix}0,x,y,z \end {bmatrix}^T = \begin{bmatrix}0,v \end {bmatrix}^T$$，这样可以看作四元数三个虚部与空间中的三个轴对应，旋转后的点$p' = qpq^{-1}$，最后把$p'$的虚部取出，即为旋转之后点的坐标。
     + 四元数到旋转矩阵的变换关系：设$q = [s,v]^T$
-    则有$R =vv^T = s^2I+2sv\hat{} + (v\hat{}\space)^2 $
-    + 四元数到旋转向量的转换公式：
-
-    $\begin{cases} \theta = 2arccosq_0\\ \begin{bmatrix} n_x,n_y,n_z \end{bmatrix} ^T = \begin{bmatrix} q_1,q_2,q_3 \end{bmatrix} ^T /sin {\theta\over 2 }\end{cases}$
+    则有$R =vv^T = s^2I+2sv\hat{} + (v\hat{}\space)^2$
+    + 四元数到旋转向量的转换公式：  $\begin{cases} \theta = 2arccosq_0\\ \begin{bmatrix} n_x,n_y,n_z \end{bmatrix} ^T = \begin{bmatrix} q_1,q_2,q_3 \end{bmatrix} ^T /sin {\theta\over 2 }\end{cases}$
 
 ## 相似，仿射，射影变换
 + 相似变换：允许物体均匀缩放。
 $T_s = \begin{bmatrix} sR&t\\0^T&1 \end{bmatrix}$
 + 仿射变换：对物体平移+线性变换，平行关系，比例关系都不变。
-$ T_A = \begin{bmatrix} A&t\\0^T&1 \end{bmatrix}$
+$T_A = \begin{bmatrix} A&t\\0^T&1 \end{bmatrix}$
 + 射影变换（透视变换），像油画里的透视关系一样，满足近大远小。
-$ T_P = \begin{bmatrix} A&t\\a^T&v \end{bmatrix}$
+$T_P = \begin{bmatrix} A&t\\a^T&v \end{bmatrix}$
