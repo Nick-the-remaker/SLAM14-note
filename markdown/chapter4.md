@@ -5,7 +5,7 @@
 + 要求的满足条件：
     1.封闭性：$\forall a_1,a_2 \in A, $ &emsp;$a_1 \cdot a_2 \in A$.
     2.结合律：$\forall a_1,a_2,a_3 \in A,$ &emsp;$ (a_1 \cdot a_2) \cdot a_3 = a_1\cdot (a_2 \cdot a_3)$.
-    3.么元：$\exists a_0 \in A,s.t. \forall a \in A ,$ &emsp;$ a_0 \cdot a = a \cdot a_0 = a$.
+    3.幺元：$\exists a_0 \in A,s.t. \forall a \in A ,$ &emsp;$ a_0 \cdot a = a \cdot a_0 = a$.
     4.逆：$\forall a \in A，$ &emsp;$ \exists a ^{-1} \in A,$&emsp;$s.t.$ &emsp;$ a \cdot a^{-1} = a_0$.
 > 矩阵中常见的群有特殊正交群(旋转矩阵群) $SO(n)$和特殊欧式群（n维欧式变换）$SE(n)$。
 > 以三维旋转矩阵 $SO(3)$为例，旋转矩阵和乘法构成了旋转矩阵群，旋转矩阵之间的乘法满足封闭性和结合性，而幺元就是单位矩阵，$R$乘以$R^{-1}$也确实等于幺元。
