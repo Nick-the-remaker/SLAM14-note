@@ -10,7 +10,7 @@
     空间中也是如此，任意向量a在空间的一组基(e$_1$,e$_2$,e$_3$)有这样一个坐标： $$ a = \begin{bmatrix}e_1&e_2&e_3\end{bmatrix} \begin{bmatrix}a_1\\a_2\\a_3\end{bmatrix} = a_1e_1 + a_2e_2 + a_3e_3$$
 
     + 坐标系：右手系为伸开右手，大拇指是X轴正方向，食指是Y轴正方向，其他三个手指是Z轴正方向，左手系同理。
-![坐标系](https://img-blog.csdnimg.cn/f027ac701c7f4232964ece13d3150f3e.png#pic_center)
+![坐标系](/image/chapter3/coordinate.png)
 
 
     + 向量内积：内积可理解为第一个向量投影到第二个向量上（无所谓向量的顺序），可以表示为$$a\cdot b = a^Tb = \sum_{i=1}^3 a_ib_i = |a||b|cos<a,b>\\a,b \in R^3$$
